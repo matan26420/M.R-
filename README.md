@@ -1,4 +1,5 @@
-# M.R-<!DOCTYPE html>
+# M.R-
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -6,44 +7,90 @@
     <title>M.R - הכל לבית שלך! | שירותים והצעות מחיר</title>
     <style>
         :root {
-            --primary-color: #1e3c72;
-            --secondary-color: #2a5298;
             --whatsapp-color: #25D366;
-            --bg-color: #f4f7f6;
+            --bg-color: #fffafc;
             --card-bg: #ffffff;
             --text-color: #2c3e50;
         }
 
+        /* רקע צבעוני ודינמי עם "כתמי צבע" עדינים ונעימים לעין */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 25%, #ffd1ff 50%, #a1c4fd 75%, #c2e9fb 100%);
+            background-attachment: fixed;
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: var(--text-color);
             margin: 0;
             padding: 0;
+            position: relative;
+            overflow-x: hidden;
         }
 
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* אלמנטים דקורטיביים מרחפים ברקע (כתמי צבע חינניים) */
+        .color-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(50px);
+            z-index: -1;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .blob-1 { top: 10%; right: 5%; width: 300px; height: 300px; background: #ff758c; }
+        .blob-2 { top: 40% ; left: 10%; width: 350px; height: 350px; background: #764ba2; }
+        .blob-3 { bottom: 15%; right: 20%; width: 400px; height: 400px; background: #4facfe; }
+        .blob-4 { bottom: 5%; left: 5%; width: 250px; height: 250px; background: #43e97b; }
+
         header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53, #f6d365, #fda085);
+            background-size: 300% 300%;
+            animation: gradientHeader 10s ease infinite;
             color: white;
-            padding: 20px;
+            padding: 25px 20px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientHeader {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .brand-header {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
-        .main-logo {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            border: 2px solid #fff;
+        /* עיצוב הלוגו הראשי המבוקש מתוך הטקסט עם צבעוניות מתחלפת */
+        .main-logo-text {
+            background: #ffffff;
+            color: #ff416c;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 2.2em;
+            font-weight: 900;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border: 4px dashed #ff416c;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: bounceLogo 3s ease-in-out infinite;
+        }
+
+        @keyframes bounceLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
 
         /* Navigation Tabs */
@@ -51,41 +98,48 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
             padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .tab-btn {
-            background-color: #e9ecef;
+            background-color: #f0f2f5;
             border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
+            padding: 12px 25px;
+            border-radius: 30px;
             font-weight: bold;
             cursor: pointer;
             color: var(--text-color);
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.05em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .tab-btn.active, .tab-btn:hover {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
             color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 65, 108, 0.4);
         }
 
         .container {
             max-width: 1100px;
-            margin: 20px auto 40px auto;
+            margin: 30px auto 50px auto;
             padding: 0 20px;
         }
 
         .section-title {
             text-align: center;
-            margin: 30px 0 20px 0;
-            color: var(--primary-color);
-            font-size: 1.8em;
+            margin: 40px 0 25px 0;
+            color: #2b2b2b;
+            font-size: 2.2em;
+            font-weight: 800;
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
         }
 
         .page-section {
@@ -105,16 +159,18 @@
         }
 
         .hero-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             text-align: center;
+            border: 2px solid rgba(255,255,255,0.6);
         }
 
         .hero-card img {
             max-width: 100%;
-            border-radius: 10px;
+            border-radius: 12px;
             object-fit: contain;
         }
 
@@ -125,24 +181,29 @@
         }
 
         .service-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: transform 0.2s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.8);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
         .card-header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 12px;
+            padding: 16px;
             text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
         }
 
         .media-container {
@@ -160,7 +221,12 @@
             width: 100%;
             height: 110px;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03);
         }
 
         .card-body {
@@ -172,13 +238,12 @@
         }
 
         .description {
-            font-size: 0.9em;
-            line-height: 1.5;
-            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #444;
             margin-bottom: 15px;
         }
 
-        /* רשימת קטגוריות פנימיות */
         .sub-options {
             display: flex;
             flex-direction: column;
@@ -191,35 +256,44 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            background-color: var(--whatsapp-color);
+            background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
             text-decoration: none;
-            padding: 12px;
-            border-radius: 8px;
+            padding: 13px;
+            border-radius: 10px;
             font-weight: bold;
             font-size: 0.95em;
-            transition: background 0.3s;
+            transition: all 0.3s;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
         }
 
         .whatsapp-btn:hover {
-            background-color: #1eb954;
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
         }
 
         /* Portfolio Gallery Page Styles */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .portfolio-item {
-            background: white;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             display: flex;
             flex-direction: column;
+            border: 1px solid rgba(255,255,255,0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
         }
 
         .portfolio-item img, .portfolio-item video {
@@ -229,7 +303,7 @@
         }
 
         .portfolio-content {
-            padding: 15px;
+            padding: 18px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -237,35 +311,37 @@
         }
 
         footer {
-            background-color: #ffffff;
-            border-top: 1px solid #e0e0e0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255,255,255,0.5);
             padding: 30px 20px;
             text-align: center;
-            margin-top: 40px;
-        }
-
-        .signature-img {
-            max-width: 250px;
-            height: auto;
-            margin-bottom: 10px;
+            margin-top: 50px;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.05);
         }
     </style>
 </head>
 <body>
 
+    <!-- כתמי צבע רקע דקורטיביים -->
+    <div class="color-blob blob-1"></div>
+    <div class="color-blob blob-2"></div>
+    <div class="color-blob blob-3"></div>
+    <div class="color-blob blob-4"></div>
+
 <header>
     <div class="brand-header">
-        <img src="14855.jpg" alt="M.R Logo" class="main-logo">[span_10](start_span)[span_10](end_span)
+        <div class="main-logo-text">M.R - הכל לבית</div>
         <div>
-            <h1 style="margin: 0; font-size: 2em;">M.R - הכל לבית שלך!</h1>
-            <p style="margin: 5px 0 0 0; font-size: 1.1em;">Всё для вашего дома!</p>
+            <h1 style="margin: 0; font-size: 1.8em; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">שירותים והצעות מחיר מקיפות</h1>
+            <p style="margin: 5px 0 0 0; font-size: 1.1em; opacity: 0.95;">Всё для вашего дома! מקצועיות, אמינות ושירות מכל הלב</p>
         </div>
     </div>
 </header>
 
 <div class="nav-tabs">
-    <button class="tab-btn active" onclick="switchPage('services', event)">שירותים והצעות מחיר</button>
-    <button class="tab-btn" onclick="switchPage('portfolio', event)">גלריית עבודות מהשטח</button>
+    <button class="tab-btn active" onclick="switchPage('services', event)">🎨 שירותים והצעות מחיר</button>
+    <button class="tab-btn" onclick="switchPage('portfolio', event)">✨ גלריית עבודות מהשטח</button>
 </div>
 
 <div class="container">
@@ -276,11 +352,11 @@
         <section class="hero-section">
             <div class="hero-card">
                 <h3>המומחיות שלנו</h3>
-                <img src="14854.jpg" alt="M.R כרטיס ביקור ושירותים">[span_11](start_span)[span_11](end_span)
+                <img src="14854.jpg" alt="M.R כרטיס ביקור ושירותים">
             </div>
             <div class="hero-card">
                 <h3>שירות מקצועי ומהיר</h3>
-                <img src="14856.jpg" alt="M.R דמות המותג">[span_12](start_span)[span_12](end_span)
+                <img src="14856.jpg" alt="M.R דמות המותג">
             </div>
         </section>
 
@@ -288,9 +364,55 @@
 
         <div class="services-grid">
             
+            <!-- עבודות הריסה ופינוי -->
+            <div class="service-card">
+                <div class="card-header" style="background: linear-gradient(135deg, #ff416c, #ff4b2b);"><h3 style="margin:0;">עבודות הריסה, פינוי ובטון</h3></div>
+                <div class="media-container">
+                    <div class="gallery-grid">
+                        <img src="14295.jpg" alt="הריסה 1" onerror="this.src='https://via.placeholder.com/150?text=הריסה+1'">
+                        <img src="14275.jpg" alt="הריסה 2" onerror="this.src='https://via.placeholder.com/150?text=הריסה+2'">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="description">הריסת קירות בטון מזוין, פירוק תשתיות, הריסת קירות פנים ופינוי פסולת בניין בצורה בטיחותית ומקצועית.</div>
+                    <a href="https://wa.me/972559423309?text=היי%20M.R,%20אני%20מעוניין%20בהצעת%20מחיר%20לעבודת%20הריסה/פינוי.%20מצורפות%20תמונות/סרטונים%20של%20האזור:" class="whatsapp-btn" target="_blank">
+                        💬 שלח תמונות וקבל הצעת מחיר להריסות
+                    </a>
+                </div>
+            </div>
+
+            <!-- שירותי הובלות -->
+            <div class="service-card">
+                <div class="card-header" style="background: linear-gradient(135deg, #f7b733, #fc4a1a);"><h3 style="margin:0;">שירותי הובלות מקיפים</h3></div>
+                <div class="media-container">
+                    <div class="gallery-grid">
+                        <img src="moving1.jpg" alt="הובלות 1" onerror="this.src='https://via.placeholder.com/150?text=הובלות+1'">
+                        <img src="moving2.jpg" alt="הובלות 2" onerror="this.src='https://via.placeholder.com/150?text=הובלות+2'">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="description">שירות הובלה מקצועי ובטוח לכל סוגי הציוד והדירות. בחר קטגוריה לקבלת הצעת מחיר מהירה:</div>
+                    
+                    <div class="sub-options">
+                        <a href="https://wa.me/972559423309?text=היי%20M.R,%20אני%20מעוניין%20בהצעת%20מחיר%20להובלת%20דירה.%20מצורפות%20תמונות/פירוט:" class="whatsapp-btn" target="_blank" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                            🚚 הובלת דירות (גדולות / בינוניות)
+                        </a>
+                        <a href="https://wa.me/972559423309?text=היי%20M.R,%20אני%20מעוניין%20בהצעת%20מחיר%20להובלת%20משרד.%20מצורפות%20תמונות:" class="whatsapp-btn" target="_blank" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                            🏢 הובלת משרדים ועסקים
+                        </a>
+                        <a href="https://wa.me/972559423309?text=היי%20M.R,%20אני%20מעוניין%20בהצעת%20מחיר%20להובלה%20קטנה.%20מצורפות%20תמונות%20הציוד:" class="whatsapp-btn" target="_blank" style="background: linear-gradient(135deg, #43e97b, #38f9d7); color: #111;">
+                            📦 הובלה קטנה / ציוד בודד
+                        </a>
+                        <a href="https://wa.me/972559423309?text=היי%20M.R,%20אני%20מעוניין%20בהצעת%20מחיר%20להובלת%20רהיט%20אחד.%20מצורפת%20תמונת%20הרהיט:" class="whatsapp-btn" target="_blank" style="background: linear-gradient(135deg, #43e97b, #38f9d7); color: #111;">
+                            🪑 הובלה ופירוק/הרכבת רהיט
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- אינסטלציה -->
             <div class="service-card">
-                <div class="card-header"><h3 style="margin:0;">עבודות אינסטלציה</h3></div>
+                <div class="card-header" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);"><h3 style="margin:0;">עבודות אינסטלציה</h3></div>
                 <div class="media-container">
                     <div class="gallery-grid">
                         <img src="plumbing1.jpg" alt="אינסטלציה 1" onerror="this.src='https://via.placeholder.com/150?text=אינסטלציה+1'">
@@ -307,7 +429,7 @@
 
             <!-- שיפוצים, גבס וצבע -->
             <div class="service-card">
-                <div class="card-header"><h3 style="margin:0;">שיפוצים, גבס וצבע</h3></div>
+                <div class="card-header" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);"><h3 style="margin:0;">שיפוצים, גבס וצבע</h3></div>
                 <div class="media-container">
                     <div class="gallery-grid">
                         <img src="14230.jpg" alt="שיפוץ 1" onerror="this.src='https://via.placeholder.com/150?text=שיפוץ+1'">
@@ -324,7 +446,7 @@
 
             <!-- ניקיון וחידוש רהיטים -->
             <div class="service-card">
-                <div class="card-header"><h3 style="margin:0;">ניקיון וחידוש רהיטים</h3></div>
+                <div class="card-header" style="background: linear-gradient(135deg, #10b981, #047857);"><h3 style="margin:0;">ניקיון וחידוש רהיטים</h3></div>
                 <div class="media-container">
                     <div class="gallery-grid">
                         <img src="cleaning1.jpg" alt="ניקיון 1" onerror="this.src='https://via.placeholder.com/150?text=ניקיון+1'">
@@ -339,42 +461,13 @@
                 </div>
             </div>
 
-            <!-- הובלות (בחירה לפי קטגוריה) -->
-            <div class="service-card">
-                <div class="card-header"><h3 style="margin:0;">שירותי הובלות</h3></div>
-                <div class="media-container">
-                    <div class="gallery-grid">
-                        <img src="moving1.jpg" alt="הובלות 1" onerror="this.src='https://via.placeholder.com/150?text=הובלות+1'">
-                        <img src="moving2.jpg" alt="הובלות 2" onerror="this.src='https://via.placeholder.com/150?text=הובלות+2'">
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="description">בחר סוג הובלה לקבלת הצעת מחיר בוואטסאפ:</div>
-                    
-                    <div class="sub-options">
-                        <a href="https://wa.me/972559423309?text=היי%20M.R,%20אני%20מעוניין%20בהצעת%20מחיר%20להובלה%20קטנה.%20מצורפות%20תמונות%20הציוד:" class="whatsapp-btn" target="_blank" style="background-color: #2a5298;">
-                            📦 הובלה קטנה
-                        </a>
-                        <a href="https://wa.me/972559423309?text=היי%20M.R,%20אני%20מעוניין%20בהצעת%20מחיר%20להובלת%20רהיט%20אחד.%20מצורפת%20תמונת%20הרהיט:" class="whatsapp-btn" target="_blank" style="background-color: #2a5298;">
-                            🪑 הובלת רהיט אחד
-                        </a>
-                        <a href="https://wa.me/972559423309?text=היי%20M.R,%20אני%20מעוניין%20בהצעת%20מחיר%20להובלה%20גדולה%20(דירה).%20מצורפות%20תמונות:" class="whatsapp-btn" target="_blank" style="background-color: #1e3c72;">
-                            🚚 הובלה גדולה (דירה)
-                        </a>
-                        <a href="https://wa.me/972559423309?text=היי%20M.R,%20אני%20מעוניין%20בהצעת%20מחיר%20להובלת%20משרד.%20מצורפות%20תמונות:" class="whatsapp-btn" target="_blank" style="background-color: #1e3c72;">
-                            🏢 הובלת משרד
-                        </a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
     <!-- עמוד 2: גלריית עבודות מהשטח -->
     <div id="portfolio-page" class="page-section">
         <h2 class="section-title">גלריית עבודות ופרויקטים מהשטח</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 25px;">צפו בכל הסרטונים ותמונות הפרויקטים המעודכנים מתוך אתרי העבודה</p>
+        <p style="text-align: center; color: #444; margin-bottom: 25px; font-weight: 500;">צפו בכל הסרטונים ותמונות הפרויקטים המעודכנים מתוך אתרי העבודה</p>
 
         <div class="portfolio-grid">
             
@@ -432,8 +525,7 @@
 </div>
 
 <footer>
-    <img src="14346.jpg" alt="Matan Richter Signature" class="signature-img" onerror="this.style.display='none'">
-    <p style="margin:0; font-size: 0.9em; color: #666;">כל הזכויות שמורות ל-M.R - שירות מקיף ומקצועי בכל מקום בישראל</p>
+    <p style="margin:0; font-size: 1em; font-weight: bold; color: #333;">כל הזכויות שמורות ל-M.R - שירות מקיף ומקצועי בכל מקום בישראל 🌟</p>
 </footer>
 
 <script>
