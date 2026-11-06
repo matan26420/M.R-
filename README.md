@@ -69,11 +69,28 @@
             font-size: 14px;
         }
         
-        /* בחירת כוכבים מעוצבת ונוחה */
-        .stars-select-wrapper {
+        /* כוכבים פיזיים אמיתיים עם חצאים */
+        .stars-container {
             display: flex;
-            align-items: center;
-            gap: 10px;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 5px;
+            font-size: 32px;
+            cursor: pointer;
+            unicode-bidi: bidi-override;
+        }
+        .star {
+            color: #ddd;
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            transition: color 0.2s;
+        }
+        .star.active {
+            color: #ffc107;
+        }
+        .star.half {
+            color: #ffc107;
         }
 
         .reviews-list {
@@ -121,11 +138,11 @@
 
     <h2>בחרו שירות · Выберите услугу</h2>
     <div class="services-grid">
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%90%D7%99%D7%A0%D7%A1%D7%98%D7%9C%D7%A6%D7%99%D7%94.">🚰 אינסטלציה</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%A6%D7%91%D7%A2.">🎨 צבע</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%97%D7%99%D7%93%D7%95%D7%A9%20%D7%A8%D7%94%D7%99%D7%98%D7%99%D7%9D.">🛋️ חידוש רהיטים</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F.">🧹 ניקיון</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%A8%D7%99%D7%A1%D7%95%D7%AA%20%D7%95%D7%A7%D7%99%D7%A8%D7%95%D7%AA.">🧱 הריסות</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%90%D7%99%D7%A0%D7%A1%D7%98%D7%9C%D7%A6%D7%99%D7%94.">🚰 אינסטלציה</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%A6%D7%91%D7%A2.">🎨 צבע</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%97%D7%99%D7%93%D7%95%D7%A9%20%D7%A8%D7%94%D7%99%D7%98%D7%99%D7%9D.">🛋️ חידוש רהיטים</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F.">🧹 ניקיון</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%99%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%A8%D7%99%D7%A1%D7%95%D7%AA%20%D7%95%D7%A7%D7%99%D7%A8%D7%95%D7%AA.">🧱 הריסות</a>
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A9%D7%99%D7%A4%D7%95%D7%A6%D7%99%D7%9D.">📐 שיפוצים</a>
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%92%D7%91%D7%A1.">🪚 עבודות גבס</a>
     </div>
@@ -133,7 +150,7 @@
     <h2>🚚 הובלות · Перевозки</h2>
     <div class="moves-grid">
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%92%D7%93%D7%95%D7%9C%D7%94.">🚛 הובלות גדולות</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%A7%D7%98%D7%95%D7%A0%D7%94.">📦 הובלות קטנות</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%A7%D7%98%D7%95%D7%90.">📦 הובלות קטנות</a>
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%AA%20%D7%A8%D7%94%D7%95%D7%98%20%D7%90%D7%97%D7%93.">🛋️ הובלת רהיט אחד</a>
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%AA%20%D7%9E%D7%A9%D7%A8%D7%93.">🏢 הובלות משרדים</a>
     </div>
@@ -141,7 +158,7 @@
     <!-- אזור תגובות ודירוגים -->
     <div class="reviews-section">
         <h2>⭐ תגובות לקוחות ודירוגים</h2>
-        <h3>✍️ הტארט הזו מיועדת רק להשארת תגובה ושליחה אליי:</h3>
+        <h3>✍️ השאר תגובה ודרג אותנו:</h3>
         
         <form id="reviewForm">
             <div class="form-group">
@@ -168,11 +185,21 @@
             </div>
 
             <div class="form-group">
-                <label for="reviewRating">בחר דירוג כוכבים (0 עד 5, כולל חצאים כמו 4.5):</label>
-                <div class="stars-select-wrapper">
-                    <input type="number" id="reviewRating" min="0" max="5" step="0.5" value="5" required style="width: 100px; text-align: center; font-weight: bold; font-size: 16px;">
-                    <span id="starPreview" style="font-size: 20px;">⭐⭐⭐⭐⭐ (5/5)</span>
+                <label>דירוג כוכבים (לחץ על הכוכבים לבחירה, כולל חצאים):</label>
+                <div class="stars-container" id="starPicker">
+                    <span class="star" data-value="5">★</span>
+                    <span class="star" data-value="4.5">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="3.5">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="2.5">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="1.5">★</span>
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="0.5">★</span>
                 </div>
+                <div style="margin-top: 5px; font-weight: bold; color: #007bff;" id="ratingText">דירוג נבחר: 5 מתוך 5 כוכבים</div>
+                <input type="hidden" id="reviewRating" value="5" required>
             </div>
 
             <div class="form-group">
@@ -222,21 +249,30 @@
     const reviewsList = document.getElementById('reviewsList');
     const filterCategory = document.getElementById('filterCategory');
     const reviewRatingInput = document.getElementById('reviewRating');
-    const starPreview = document.getElementById('starPreview');
+    const ratingText = document.getElementById('ratingText');
+    const stars = document.querySelectorAll('#starPicker .star');
 
-    // עדכון תצוגה חזותית של הכוכבים בזמן שהמשתמש משנה את המספר
-    reviewRatingInput.addEventListener('input', function() {
-        let val = parseFloat(this.value) || 0;
-        if (val < 0) val = 0;
-        if (val > 5) val = 5;
-        
-        let fulls = Math.floor(val);
-        let hasHalf = (val - fulls) >= 0.5;
-        let str = '';
-        for(let i=0; i<fulls; i++) str += '⭐';
-        if(hasHalf) str += '✨';
-        starPreview.innerHTML = `${str} (${val}/5)`;
+    // ניהול בחירת כוכבים פיזית (כולל חצאים)
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            let val = parseFloat(this.getAttribute('data-value'));
+            reviewRatingInput.value = val;
+            ratingText.innerHTML = `דירוג נבחר: ${val} מתוך 5 כוכבים`;
+
+            // עדכון צבע הכוכבים פיזית
+            stars.forEach(s => {
+                let sVal = parseFloat(s.getAttribute('data-value'));
+                if (sVal <= val) {
+                    s.classList.add('active');
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+        });
     });
+
+    // הפעלה ראשונית של סימון 5 כוכבים כברירת מחדל
+    stars.forEach(s => s.classList.add('active'));
 
     // המרת מספר כוכבים לתצוגה בכרטיסייה
     function getStarsHTML(rating) {
@@ -284,7 +320,7 @@
 
         let name = document.getElementById('reviewerName').value.trim();
         let category = document.getElementById('reviewCategory').value;
-        let rating = parseFloat(document.getElementById('reviewRating').value);
+        let rating = parseFloat(reviewRatingInput.value);
         let text = document.getElementById('reviewText').value.trim();
         let date = new Date().toLocaleDateString('he-IL');
 
@@ -302,11 +338,12 @@
         // איפוס הטופס וחזרה למצב הכללי כדי לראות את התגובה
         reviewForm.reset();
         reviewRatingInput.value = '5';
-        starPreview.innerHTML = '⭐⭐⭐⭐⭐ (5/5)';
+        ratingText.innerHTML = 'דירוג נבחר: 5 מתוך 5 כוכבים';
+        stars.forEach(s => s.classList.add('active'));
         filterCategory.value = 'all';
         renderReviews();
 
-        // שליחת הודעה לוואטסאפ שלך
+        // יצירת קישור וואטסאפ ופתיחתו באופן בטוח
         let whatsappMessage = `*💬 תגובה חדשה התקבלה באתר!*%0A%0A` +
                               `👤 *שם:* ${encodeURIComponent(name)}%0A` +
                               `🏷️ *קטגוריה:* ${encodeURIComponent(category)}%0A` +
@@ -323,6 +360,7 @@
 
 </body>
 </html>
+
 
 
 
