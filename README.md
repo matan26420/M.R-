@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<שלום>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -44,7 +44,11 @@
             background: #0056b3;
         }
         .reviews-section {
-            margin-top: 30px;
+            margin-top: 40px;
+            background: #fafafa;
+            border: 2px dashed #007bff;
+            padding: 20px;
+            border-radius: 8px;
             text-align: right;
         }
         .form-group {
@@ -58,51 +62,57 @@
         }
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-size: 14px;
         }
-        /* Stars styling */
-        .star-rating {
+        
+        /* עיצוב כוכבים אינטראקטיבי */
+        .star-rating-container {
             display: flex;
             flex-direction: row-reverse;
             justify-content: flex-end;
             gap: 5px;
-            font-size: 24px;
+            font-size: 30px;
             cursor: pointer;
         }
-        .star-rating input {
+        .star-rating-container input {
             display: none;
         }
-        .star-rating label {
+        .star-rating-container label {
             color: #ddd;
             cursor: pointer;
+            transition: color 0.2s;
         }
-        .star-rating input:checked ~ label,
-        .star-rating label:hover,
-        .star-rating label:hover ~ label {
-            color: #f39c12;
+        .star-rating-container input:checked ~ label,
+        .star-rating-container label:hover,
+        .star-rating-container label:hover ~ label {
+            color: #ffc107;
         }
+
         .reviews-list {
             margin-top: 20px;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #ddd;
             padding-top: 15px;
         }
         .review-card {
-            background: #f9f9f9;
+            background: #fff;
             border: 1px solid #e1e1e1;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin-bottom: 10px;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 12px;
             text-align: right;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         .review-header {
             display: flex;
             justify-content: space-between;
             font-weight: bold;
             font-size: 14px;
-            color: #555;
+            color: #444;
+            margin-bottom: 5px;
         }
         .filter-container {
             margin-bottom: 15px;
@@ -122,12 +132,12 @@
     <p>שירות מקיף ומקצועי ומהיר בכל מקום בישראל · Быстрый профессиональный сервис по всему Израилю</p>
 
     <div style="margin: 20px 0;">
-        <a href="https://wa.me/972559423309" class="btn" style="background: #25d366; display: inline-block; margin-bottom: 10px;">💬 WhatsApp · 055-9423309</a>
+        <a href="https://wa.me/972559423309" class="btn" style="background: #25d366; display: inline-block;">💬 WhatsApp · 055-9423309</a>
     </div>
 
     <h2>בחרו שירות · Выберите услугу</h2>
     <div class="services-grid">
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%90%D7%99%D7%A0%D7%A1%D7%98%D7%9C%D7%A6%D7%99%D7%94.">🚰 אינסטלציה</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%90%D7%99%D7%A0%D7%A1%D7%98%D7%9C%D7%A6%D7%99%D7%94.">🚰 אינסטלציה</a>
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%A6%D7%91%D7%A2.">🎨 צבע</a>
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%97%D7%99%D7%93%D7%95%D7%A9%20%D7%A8%D7%94%D7%99%D7%98%D7%99%D7%9D.">🛋️ חידוש רהיטים</a>
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F.">🧹 ניקיון</a>
@@ -139,15 +149,15 @@
     <h2>🚚 הובלות · Перевозки</h2>
     <div class="moves-grid">
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%92%D7%93%D7%95%D7%9C%D7%94.">🚛 הובלות גדולות</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%A7%D7%98%D7%A0%D7%94.">📦 הובלות קטנות</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%AA%20%D7%A8%D7%94%D7%99%D7%98%20%D7%90%D7%97%D7%93.">🛋️ הובלת רהיט אחד</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%A7%D7%98%D7%95%D7%A0%D7%94.">📦 הובלות קטנות</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%AA%20%D7%A8%D7%94%D7%95%D7%98%20%D7%90%D7%97%D7%93.">🛋️ הובלת רהיט אחד</a>
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%AA%20%D7%9E%D7%A9%D7%A8%D7%93.">🏢 הובלות משרדים</a>
     </div>
 
-    <!-- אזור תגובות ודירוגים -->
+    <!-- אזור תגובות ודירוגים נפרד לגמרי -->
     <div class="reviews-section">
-        <h2>⭐ תגובות לקוחות</h2>
-        <h3>✍️ כתבו תגובה על עבודה שעשיתי לכם</h3>
+        <h2>⭐ תגובות לקוחות ודירוגים</h2>
+        <h3>✍️ שתף אותנו איך היה השירות:</h3>
         
         <form id="reviewForm">
             <div class="form-group">
@@ -156,7 +166,7 @@
             </div>
 
             <div class="form-group">
-                <label for="reviewCategory">בחר קטגוריה:</label>
+                <label for="reviewCategory">בחר קטגוריה על מה הניתנת התגובה:</label>
                 <select id="reviewCategory" required>
                     <option value="">בחר שירות...</option>
                     <option value="אינסטלציה">אינסטלציה</option>
@@ -174,27 +184,27 @@
             </div>
 
             <div class="form-group">
-                <label>דירוג (0 עד 5 כוכבים, כולל חצאים):</label>
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <input type="number" id="reviewRating" min="0" max="5" step="0.5" value="5" required style="width: 80px;">
-                    <span style="font-size: 14px; color: #666;">(לדוגמה: 4.5 או 5)</span>
+                <label>בחר דירוג (מ-0 עד 5 כוכבים, כולל חצאים):</label>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <input type="number" id="reviewRating" min="0" max="5" step="0.5" value="5" required style="width: 90px; text-align: center; font-weight: bold;">
+                    <span style="font-size: 13px; color: #555;">(ניתן לרשום למשל 4.5, 5, 3.5 וכו')</span>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="reviewText">התגובה שלך:</label>
-                <textarea id="reviewText" rows="3" required placeholder="ספר על השירות שקיבלת..."></textarea>
+                <textarea id="reviewText" rows="3" required placeholder="כתוב כאן את חוות דעתך..."></textarea>
             </div>
 
-            <button type="submit" class="btn" style="background: #28a745; width: 100%; border: none; cursor: pointer;">שלח תגובה</button>
+            <button type="submit" class="btn" style="background: #28a745; width: 100%; border: none; cursor: pointer; font-size: 16px;">פרסם תגובה באתר ושלח אליי לוואטסאפ 🚀</button>
         </form>
 
-        <!-- סינון תגובות -->
-        <div style="margin-top: 30px;">
+        <!-- אזור סינון והצגת התגובות מכל הקטגוריות -->
+        <div style="margin-top: 35px;">
             <div class="filter-container">
-                <label for="filterCategory" style="display: inline-block; margin-left: 10px;">סנן לפי קטגוריה:</label>
-                <select id="filterCategory" onchange="renderReviews()" style="width: 200px; display: inline-block;">
-                    <option value="all">הכל (מכל הקטגוריות)</option>
+                <label for="filterCategory" style="display: inline-block; margin-left: 10px; font-weight: bold;">סנן תגובות לפי קטגוריה:</label>
+                <select id="filterCategory" onchange="renderReviews()" style="width: 220px; display: inline-block;">
+                    <option value="all">הצג הכל (מכל הקטגוריות)</option>
                     <option value="אינסטלציה">אינסטלציה</option>
                     <option value="צבע">צבע</option>
                     <option value="חידוש רהיטים">חידוש רהיטים</option>
@@ -210,7 +220,7 @@
             </div>
 
             <div class="reviews-list" id="reviewsList">
-                <!-- כאן יופיעו התגובות -->
+                <!-- כאן יופיעו התגובות שיתווספו -->
             </div>
         </div>
     </div>
@@ -221,29 +231,29 @@
 </div>
 
 <script>
-    // טעינת תגובות שמורות מהזיכרון המקומי (LocalStorage)
+    // טעינת תגובות קודמות מהזיכרון של הדפדפן
     let reviews = JSON.parse(localStorage.getItem('mr_reviews')) || [];
 
     const reviewForm = document.getElementById('reviewForm');
     const reviewsList = document.getElementById('reviewsList');
     const filterCategory = document.getElementById('filterCategory');
 
-    // פונקציה להמרת מספר כוכבים לאייקונים של כוכבים
+    // פונקציה שמייצרת את תצוגת הכוכבים לפי הציון
     function getStarsHTML(rating) {
-        let stars = '';
         let fullStars = Math.floor(rating);
-        let hasHalfStar = (rating - fullStars) >= 0.5;
-
+        let hasHalf = (rating - fullStars) >= 0.5;
+        let starsStr = '';
+        
         for (let i = 0; i < fullStars; i++) {
-            stars += '⭐';
+            starsStr += '⭐';
         }
-        if (hasHalfStar) {
-            stars += '⭐'; // אפשר לשים חצי כוכב אם תרצה, או להסתפק בכוכב מלא/סימן
+        if (hasHalf) {
+            starsStr += '✨'; // מסמל חצי/תוספת
         }
-        return `${stars} (${rating})`;
+        return `${starsStr} (${rating}/5)`;
     }
 
-    // הצגת התגובות באתר
+    // פונקציה להצגת כל התגובות או לפי סינון קטגוריה
     function renderReviews() {
         reviewsList.innerHTML = '';
         let selectedFilter = filterCategory.value;
@@ -254,7 +264,7 @@
         }
 
         if (filteredReviews.length === 0) {
-            reviewsList.innerHTML = '<p style="color: #777; text-align: center;">אין עדיין תגובות בקטגוריה זו.</p>';
+            reviewsList.innerHTML = '<p style="color: #777; text-align: center; padding: 10px;">אין עדיין תגובות להצגה בקטגוריה זו.</p>';
             return;
         }
 
@@ -263,11 +273,11 @@
             card.className = 'review-card';
             card.innerHTML = `
                 <div class="review-header">
-                    <span>${review.name} (${review.category})</span>
+                    <span>👤 ${review.name} <span style="color: #007bff; font-weight: normal;">(${review.category})</span></span>
                     <span>${getStarsHTML(review.rating)}</span>
                 </div>
-                <p style="margin: 8px 0 0 0;">${review.text}</p>
-                <div style="font-size: 11px; color: #999; margin-top: 5px; text-align: left;">${review.date}</div>
+                <p style="margin: 8px 0; color: #333; word-break: break-word;">${review.text}</p>
+                <div style="font-size: 11px; color: #888; text-align: left;">📅 ${review.date}</div>
             `;
             reviewsList.appendChild(card);
         });
@@ -285,32 +295,32 @@
 
         let newReview = { name, category, rating, text, date };
 
-        // הוספה לרשימה ושמירה בזיכרון המקומי של הדפדפן
+        // הוספה למערך ושמירה בדפדפן
         reviews.unshift(newReview);
         localStorage.setItem('mr_reviews', JSON.stringify(reviews));
 
-        // איפוס הטופס ורענון התצוגה
+        // איפוס הטופס ועדכון התצוגה באתר
         reviewForm.reset();
         document.getElementById('reviewRating').value = '5';
+        filterCategory.value = 'all'; // מחזיר להצגת הכל כדי שיראו את התגובה החדשה מיד
         renderReviews();
 
-        // יצירת הודעה ושליחה לוואטסאפ שלך
-        let whatsappMessage = `*תגובה חדשה התקבלה באתר!*%0A%0A` +
+        // שליחת התגובה גם לוואטסאפ שלך
+        let whatsappMessage = `*💬 תגובה חדשה התקבלה באתר!*%0A%0A` +
                               `👤 *שם:* ${encodeURIComponent(name)}%0A` +
                               `🏷️ *קטגוריה:* ${encodeURIComponent(category)}%0A` +
                               `⭐ *דירוג:* ${rating} כוכבים%0A` +
-                              `💬 *תגובה:* ${encodeURIComponent(text)}`;
+                              `📝 *תוכן התגובה:* ${encodeURIComponent(text)}`;
 
         let whatsappUrl = `https://wa.me/972559423309?text=${whatsappMessage}`;
-        
-        // פתיחת וואטסאפ לשליחת ההודעה אליך
         window.open(whatsappUrl, '_blank');
     });
 
-    // טעינת התגובות בעת טעינת הדף
+    // הפעלה ראשונית של הצגת התגובות בטעינת העמוד
     renderReviews();
 </script>
 
 </body>
 </html>
+
 
