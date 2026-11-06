@@ -43,81 +43,65 @@
         a.btn:hover {
             background: #0056b3;
         }
-        .reviews-section {
-            margin-top: 40px;
-            background: #fafafa;
-            border: 2px dashed #007bff;
+        .review-box {
+            background: #fdfdfd;
+            border: 2px solid #007bff;
             padding: 20px;
             border-radius: 8px;
+            margin-top: 30px;
             text-align: right;
         }
-        .form-group {
+        .input-group {
             margin-bottom: 15px;
-            text-align: right;
         }
-        .form-group label {
+        .input-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
         }
-        .form-group input, .form-group select, .form-group textarea {
+        .input-group input, .input-group select, .input-group textarea {
             width: 100%;
             padding: 10px;
             box-sizing: border-box;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
             font-size: 14px;
         }
-        
-        /* כוכבים פיזיים אמיתיים עם חצאים */
-        .stars-container {
+        /* כפתורי בחירת רייטינג פיזיים */
+        .rating-buttons {
             display: flex;
-            flex-direction: row-reverse;
-            justify-content: flex-end;
             gap: 5px;
-            font-size: 32px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .rate-btn {
+            background: #e9ecef;
+            border: 1px solid #ced4da;
+            padding: 8px 12px;
+            border-radius: 4px;
             cursor: pointer;
-            unicode-bidi: bidi-override;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.2s;
         }
-        .star {
-            color: #ddd;
-            cursor: pointer;
-            position: relative;
-            display: inline-block;
-            transition: color 0.2s;
+        .rate-btn.selected {
+            background: #ffc107;
+            color: #000;
+            border-color: #d39e00;
         }
-        .star.active {
-            color: #ffc107;
-        }
-        .star.half {
-            color: #ffc107;
-        }
-
-        .reviews-list {
-            margin-top: 20px;
+        .reviews-display {
+            margin-top: 25px;
             border-top: 1px solid #ddd;
             padding-top: 15px;
         }
         .review-card {
             background: #fff;
-            border: 1px solid #e1e1e1;
-            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            padding: 12px;
             border-radius: 6px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-align: right;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            font-size: 14px;
-            color: #444;
-            margin-bottom: 5px;
-        }
-        .filter-container {
-            margin-bottom: 15px;
-            text-align: right;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         footer {
             margin-top: 20px;
@@ -129,47 +113,47 @@
 <body>
 
 <div class="container">
-    <h1>M.R – הכול לבית שלך!</h1>
-    <p>שירות מקיף ומקצועי ומהיר בכל מקום בישראל · Быстрый профессиональный сервис по всему Израилю</p>
+    <h1>M.R – הכול לבית שלך[span_0](start_span)[span_0](end_span)!</h1>
+    <p>שירות מקיף ומקצועי ומהיר בכל מקום בישראל[span_1](start_span)[span_1](end_span)</p>
 
     <div style="margin: 20px 0;">
-        <a href="https://wa.me/972559423309" class="btn" style="background: #25d366; display: inline-block;">💬 WhatsApp · 055-9423309</a>
+        <a href="https://wa.me/972559423309" class="btn" style="background: #25d366; display: inline-block;">💬 WhatsApp · 055-9423309[span_2](start_span)[span_2](end_span)</a>
     </div>
 
-    <h2>בחרו שירות · Выберите услугу</h2>
+    <h2>בחרו שירות · Выберите услугу[span_3](start_span)[span_3](end_span)</h2>
     <div class="services-grid">
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%90%D7%99%D7%A0%D7%A1%D7%98%D7%9C%D7%A6%D7%99%D7%94.">🚰 אינסטלציה</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%A6%D7%91%D7%A2.">🎨 צבע</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%97%D7%99%D7%93%D7%95%D7%A9%20%D7%A8%D7%94%D7%99%D7%98%D7%99%D7%9D.">🛋️ חידוש רהיטים</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F.">🧹 ניקיון</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%99%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%A8%D7%99%D7%A1%D7%95%D7%AA%20%D7%95%D7%A7%D7%99%D7%A8%D7%95%D7%AA.">🧱 הריסות</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A9%D7%99%D7%A4%D7%95%D7%A6%D7%99%D7%9D.">📐 שיפוצים</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%92%D7%91%D7%A1.">🪚 עבודות גבס</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%90%D7%99%D7%A0%D7%A1%D7%98%D7%9C%D7%A6%D7%99%D7%94.">🚰 אינסטלציה[span_4](start_span)[span_4](end_span)</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%A6%D7%91%D7%A2.">🎨 צבע[span_5](start_span)[span_5](end_span)</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%97%D7%99%D7%93%D7%95%D7%A9%20%D7%A8%D7%94%D7%99%D7%98%D7%99%D7%9D.">🛋️ חידוש רהיטים[span_6](start_span)[span_6](end_span)</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F.">🧹 ניקיון[span_7](start_span)[span_7](end_span)</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%A8%D7%99%D7%A1%D7%95%D7%AA%20%D7%95%D7%A7%D7%99%D7%A8%D7%95%D7%AA.">🧱 הריסות[span_8](start_span)[span_8](end_span)</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A9%D7%99%D7%A4%D7%95%D7%A6%D7%99%D7%9D.">📐 שיפוצים[span_9](start_span)[span_9](end_span)</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%92%D7%91%D7%A1.">🪚 עבודות גבס[span_10](start_span)[span_10](end_span)</a>
     </div>
 
-    <h2>🚚 הובלות · Перевозки</h2>
+    <h2>🚚 הובלות · Перевозки[span_11](start_span)[span_11](end_span)</h2>
     <div class="moves-grid">
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%92%D7%93%D7%95%D7%9C%D7%94.">🚛 הובלות גדולות</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%A7%D7%98%D7%95%D7%90.">📦 הובלות קטנות</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%AA%20%D7%A8%D7%94%D7%95%D7%98%20%D7%90%D7%97%D7%93.">🛋️ הובלת רהיט אחד</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%AA%20%D7%9E%D7%A9%D7%A8%D7%93.">🏢 הובלות משרדים</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%92%D7%93%D7%95%D7%9C%D7%94.">🚛 הובלות גדולות[span_12](start_span)[span_12](end_span)</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%A7%D7%98%D7%95%D7%90.">📦 הובלות קטנות[span_13](start_span)[span_13](end_span)</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%AA%20%D7%A8%D7%94%D7%95%D7%98%20%D7%90%D7%97%D7%93.">🛋️ הובלת רהיט אחד[span_14](start_span)[span_14](end_span)</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%AA%20%D7%9E%D7%A9%D7%A8%D7%93.">🏢 הובלות משרדים[span_15](start_span)[span_15](end_span)</a>
     </div>
 
-    <!-- אזור תגובות ודירוגים -->
-    <div class="reviews-section">
-        <h2>⭐ תגובות לקוחות ודירוגים</h2>
-        <h3>✍️ השאר תגובה ודרג אותנו:</h3>
-        
-        <form id="reviewForm">
-            <div class="form-group">
-                <label for="reviewerName">שם מלא:</label>
-                <input type="text" id="reviewerName" required placeholder="הכנס את שמך">
+    <!-- אזור תגובות ודירוג חדש ונפרד לגמרי -->
+    <div class="review-box">
+        <h2>⭐ מערכת תגובות ורייטינג לעבודה</h2>
+        <p style="font-size: 13px; color: #555;">בחר את הקטגוריה שעליה תרצה לתת חוות דעת, דרג בכוכבים (כולל חצאים) ושלח אליי ישירות!</p>
+
+        <form id="myReviewForm">
+            <div class="input-group">
+                <label>שם הממליץ:</label>
+                <input type="text" id="revName" required placeholder="הכנס את שמך המלא">
             </div>
 
-            <div class="form-group">
-                <label for="reviewCategory">בחר קטגוריה:</label>
-                <select id="reviewCategory" required>
-                    <option value="">בחר שירות...</option>
+            <div class="input-group">
+                <label>בחר קטגוריית שירות:</label>
+                <select id="revCategory" required>
+                    <option value="">בחר מהרשימה...</option>
                     <option value="אינסטלציה">אינסטלציה</option>
                     <option value="צבע">צבע</option>
                     <option value="חידוש רהיטים">חידוש רהיטים</option>
@@ -184,38 +168,37 @@
                 </select>
             </div>
 
-            <div class="form-group">
-                <label>דירוג כוכבים (לחץ על הכוכבים לבחירה, כולל חצאים):</label>
-                <div class="stars-container" id="starPicker">
-                    <span class="star" data-value="5">★</span>
-                    <span class="star" data-value="4.5">★</span>
-                    <span class="star" data-value="4">★</span>
-                    <span class="star" data-value="3.5">★</span>
-                    <span class="star" data-value="3">★</span>
-                    <span class="star" data-value="2.5">★</span>
-                    <span class="star" data-value="2">★</span>
-                    <span class="star" data-value="1.5">★</span>
-                    <span class="star" data-value="1">★</span>
-                    <span class="star" data-value="0.5">★</span>
+            <div class="input-group">
+                <label>דירוג רייטינג (בחר מספר כוכבים / חצאים):</label>
+                <div class="rating-buttons" id="ratingButtons">
+                    <button type="button" class="rate-btn" data-val="0.5">⭐ 0.5</button>
+                    <button type="button" class="rate-btn" data-val="1">⭐ 1</button>
+                    <button type="button" class="rate-btn" data-val="1.5">⭐ 1.5</button>
+                    <button type="button" class="rate-btn" data-val="2">⭐ 2</button>
+                    <button type="button" class="rate-btn" data-val="2.5">⭐ 2.5</button>
+                    <button type="button" class="rate-btn" data-val="3">⭐ 3</button>
+                    <button type="button" class="rate-btn" data-val="3.5">⭐ 3.5</button>
+                    <button type="button" class="rate-btn" data-val="4">⭐ 4</button>
+                    <button type="button" class="rate-btn" data-val="4.5">⭐ 4.5</button>
+                    <button type="button" class="rate-btn selected" data-val="5">⭐ 5</button>
                 </div>
-                <div style="margin-top: 5px; font-weight: bold; color: #007bff;" id="ratingText">דירוג נבחר: 5 מתוך 5 כוכבים</div>
-                <input type="hidden" id="reviewRating" value="5" required>
+                <input type="hidden" id="revRating" value="5">
             </div>
 
-            <div class="form-group">
-                <label for="reviewText">התגובה שלך:</label>
-                <textarea id="reviewText" rows="3" required placeholder="כתוב כאן את חוות דעתך..."></textarea>
+            <div class="input-group">
+                <label>התגובה שלך על העבודה:</label>
+                <textarea id="revText" rows="3" required placeholder="ספר בקצרה איך היה השירות..."></textarea>
             </div>
 
-            <button type="submit" class="btn" style="background: #28a745; width: 100%; border: none; cursor: pointer; font-size: 16px; padding: 12px;">פרסם תגובה באתר ושלח לוואטסאפ 🚀</button>
+            <button type="submit" class="btn" style="background: #28a745; width: 100%; border: none; cursor: pointer; font-size: 16px; padding: 12px;">שמור תגובה באתר ושלח אליי לוואטסאפ 🚀</button>
         </form>
 
-        <!-- אזור הצגה וסינון תגובות -->
-        <div style="margin-top: 35px;">
-            <div class="filter-container">
-                <label for="filterCategory" style="display: inline-block; margin-left: 10px; font-weight: bold;">סנן תגובות לפי קטגוריה:</label>
-                <select id="filterCategory" onchange="renderReviews()" style="width: 220px; display: inline-block;">
-                    <option value="all">הצג הכל (מכל הקטגוריות)</option>
+        <!-- אזור סינון והצגת התגובות -->
+        <div style="margin-top: 30px;">
+            <div class="input-group">
+                <label style="font-weight: bold;">סנן תגובות לפי קטגוריה:</label>
+                <select id="filterSelect" onchange="loadReviews()">
+                    <option value="ALL">הצג את כל התגובות מכל הקטגוריות</option>
                     <option value="אינסטלציה">אינסטלציה</option>
                     <option value="צבע">צבע</option>
                     <option value="חידוש רהיטים">חידוש רהיטים</option>
@@ -230,137 +213,113 @@
                 </select>
             </div>
 
-            <div class="reviews-list" id="reviewsList">
+            <div class="reviews-display" id="reviewsContainer">
                 <!-- כאן יופיעו התגובות -->
             </div>
         </div>
     </div>
 
     <footer>
-        Matan Richter© M.R הכול לבית
+        Matan Richter© M.R הכול לבית[span_16](start_span)[span_16](end_span)
     </footer>
 </div>
 
 <script>
-    // טעינת תגובות מזיכרון הדפדפן
-    let reviews = JSON.parse(localStorage.getItem('mr_reviews')) || [];
+    // בחירת רייטינג בכפתורים פיזיים
+    const rateButtons = document.querySelectorAll('.rate-btn');
+    const revRatingInput = document.getElementById('revRating');
 
-    const reviewForm = document.getElementById('reviewForm');
-    const reviewsList = document.getElementById('reviewsList');
-    const filterCategory = document.getElementById('filterCategory');
-    const reviewRatingInput = document.getElementById('reviewRating');
-    const ratingText = document.getElementById('ratingText');
-    const stars = document.querySelectorAll('#starPicker .star');
-
-    // ניהול בחירת כוכבים פיזית (כולל חצאים)
-    stars.forEach(star => {
-        star.addEventListener('click', function() {
-            let val = parseFloat(this.getAttribute('data-value'));
-            reviewRatingInput.value = val;
-            ratingText.innerHTML = `דירוג נבחר: ${val} מתוך 5 כוכבים`;
-
-            // עדכון צבע הכוכבים פיזית
-            stars.forEach(s => {
-                let sVal = parseFloat(s.getAttribute('data-value'));
-                if (sVal <= val) {
-                    s.classList.add('active');
-                } else {
-                    s.classList.remove('active');
-                }
-            });
+    rateButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            rateButtons.forEach(b => b.classList.remove('selected'));
+            this.classList.add('selected');
+            revRatingInput.value = this.getAttribute('data-val');
         });
     });
 
-    // הפעלה ראשונית של סימון 5 כוכבים כברירת מחדל
-    stars.forEach(s => s.classList.add('active'));
+    // מערכת שמירה והצגה של תגובות
+    const reviewForm = document.getElementById('myReviewForm');
+    const reviewsContainer = document.getElementById('reviewsContainer');
+    const filterSelect = document.getElementById('filterSelect');
 
-    // המרת מספר כוכבים לתצוגה בכרטיסייה
-    function getStarsHTML(rating) {
-        let fulls = Math.floor(rating);
-        let hasHalf = (rating - fulls) >= 0.5;
-        let str = '';
-        for(let i=0; i<fulls; i++) str += '⭐';
-        if(hasHalf) str += '✨';
-        return `${str} (${rating}/5)`;
+    function getSavedReviews() {
+        return JSON.parse(localStorage.getItem('mr_site_reviews')) || [];
     }
 
-    // פונקציה להצגת כל התגובות או לפי סינון
-    function renderReviews() {
-        reviewsList.innerHTML = '';
-        let selectedFilter = filterCategory.value;
+    function loadReviews() {
+        let reviews = getSavedReviews();
+        let currentFilter = filterSelect.value;
+        reviewsContainer.innerHTML = '';
 
-        let filteredReviews = reviews;
-        if (selectedFilter !== 'all') {
-            filteredReviews = reviews.filter(r => r.category === selectedFilter);
+        let filtered = reviews;
+        if (currentFilter !== 'ALL') {
+            filtered = reviews.filter(r => r.category === currentFilter);
         }
 
-        if (filteredReviews.length === 0) {
-            reviewsList.innerHTML = '<p style="color: #777; text-align: center; padding: 10px;">אין עדיין תגובות להצגה בקטגוריה זו.</p>';
+        if (filtered.length === 0) {
+            reviewsContainer.innerHTML = '<p style="color: #777;">אין עדיין תגובות להצגה בקטגוריה זו.</p>';
             return;
         }
 
-        filteredReviews.forEach(review => {
+        filtered.forEach(item => {
             let card = document.createElement('div');
             card.className = 'review-card';
             card.innerHTML = `
-                <div class="review-header">
-                    <span>👤 ${review.name} <span style="color: #007bff; font-weight: normal;">(${review.category})</span></span>
-                    <span>${getStarsHTML(review.rating)}</span>
+                <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 14px; margin-bottom: 5px;">
+                    <span>👤 ${item.name} <span style="color: #007bff; font-weight: normal;">(${item.category})</span></span>
+                    <span>⭐ ${item.rating} / 5</span>
                 </div>
-                <p style="margin: 8px 0; color: #333; word-break: break-word;">${review.text}</p>
-                <div style="font-size: 11px; color: #888; text-align: left;">📅 ${review.date}</div>
+                <p style="margin: 5px 0; color: #333;">${item.text}</p>
+                <div style="font-size: 11px; color: #888; text-align: left;">📅 ${item.date}</div>
             `;
-            reviewsList.appendChild(card);
+            reviewsContainer.appendChild(card);
         });
     }
 
-    // שליחת טופס התגובה
     reviewForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        let name = document.getElementById('reviewerName').value.trim();
-        let category = document.getElementById('reviewCategory').value;
-        let rating = parseFloat(reviewRatingInput.value);
-        let text = document.getElementById('reviewText').value.trim();
+        let name = document.getElementById('revName').value.trim();
+        let category = document.getElementById('revCategory').value;
+        let rating = revRatingInput.value;
+        let text = document.getElementById('revText').value.trim();
         let date = new Date().toLocaleDateString('he-IL');
 
         if (!name || !category || !text) {
-            alert('אנא מלא את כל השדות בטופס.');
+            alert('אנא מלא את כל השדות.');
             return;
         }
 
         let newReview = { name, category, rating, text, date };
-
-        // הוספה למערך ושמירה מקומית
+        let reviews = getSavedReviews();
         reviews.unshift(newReview);
-        localStorage.setItem('mr_reviews', JSON.stringify(reviews));
+        localStorage.setItem('mr_site_reviews', JSON.stringify(reviews));
 
-        // איפוס הטופס וחזרה למצב הכללי כדי לראות את התגובה
+        // איפוס טופס
         reviewForm.reset();
-        reviewRatingInput.value = '5';
-        ratingText.innerHTML = 'דירוג נבחר: 5 מתוך 5 כוכבים';
-        stars.forEach(s => s.classList.add('active'));
-        filterCategory.value = 'all';
-        renderReviews();
+        revRatingInput.value = '5';
+        rateButtons.forEach(b => b.classList.remove('selected'));
+        document.querySelector('.rate-btn[data-val="5"]').classList.add('selected');
+        filterSelect.value = 'ALL';
+        loadReviews();
 
-        // יצירת קישור וואטסאפ ופתיחתו באופן בטוח
-        let whatsappMessage = `*💬 תגובה חדשה התקבלה באתר!*%0A%0A` +
-                              `👤 *שם:* ${encodeURIComponent(name)}%0A` +
-                              `🏷️ *קטגוריה:* ${encodeURIComponent(category)}%0A` +
-                              `⭐ *דירוג:* ${rating} כוכבים%0A` +
-                              `📝 *תוכן התגובה:* ${encodeURIComponent(text)}`;
+        // שליחה לוואטסאפ שלך
+        let msg = `*💬 תגובה ודירוג חדשים מהאתר!*%0A%0A` +
+                  `👤 *שם:* ${encodeURIComponent(name)}%0A` +
+                  `🏷️ *קטגוריה:* ${encodeURIComponent(category)}%0A` +
+                  `⭐ *דירוג:* ${rating} כוכבים%0A` +
+                  `📝 *תגובה:* ${encodeURIComponent(text)}`;
 
-        let whatsappUrl = `https://wa.me/972559423309?text=${whatsappMessage}`;
-        window.open(whatsappUrl, '_blank');
+        let waUrl = `https://wa.me/972559423309?text=${msg}`;
+        window.open(waUrl, '_blank');
     });
 
-    // טעינת התגובות הראשונית בעליית העמוד
-    renderReviews();
+    // טעינת תגובות בעליית העמוד
+    loadReviews();
 </script>
 
 </body>
 </html>
-
 
 
 
