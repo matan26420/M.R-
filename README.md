@@ -69,7 +69,7 @@
             font-size: 14px;
         }
         
-        /* כוכבים פיזיים אמיתיים עם חצאים */
+        /* עיצוב כוכבים פיזיים */
         .stars-container {
             display: flex;
             flex-direction: row-reverse;
@@ -123,33 +123,33 @@
 <body>
 
 <div class="container">
-    <h1>M.R – הכול לבית שלך[span_1](start_span)[span_1](end_span)!</h1>
-    <p>שירות מקיף ומקצועי ומהיר בכל מקום בישראל · Быстрый профессиональный сервис по всему Израилю[span_2](start_span)[span_2](end_span)</p>
+    <h1>M.R – הכול לבית שלך!</h1>
+    <p>שירות מקיף ומקצועי ומהיר בכל מקום בישראל</p>
 
     <div style="margin: 20px 0;">
-        <a href="https://wa.me/972559423309" class="btn" style="background: #25d366; display: inline-block;">💬 WhatsApp · 055-9423309[span_3](start_span)[span_3](end_span)</a>
+        <a href="https://wa.me/972559423309" class="btn" style="background: #25d366; display: inline-block;">💬 WhatsApp · 055-9423309</a>
     </div>
 
-    <h2>בחרו שירות · Выберите услугу[span_4](start_span)[span_4](end_span)</h2>
+    <h2>בחרו שירות</h2>
     <div class="services-grid">
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%90%D7%99%D7%A0%D7%A1%D7%98%D7%9C%D7%A6%D7%99%D7%94.">🚰 אינסטלציה[span_5](start_span)[span_5](end_span)</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%A6%D7%91%D7%A2.">🎨 צבע[span_6](start_span)[span_6](end_span)</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%97%D7%99%D7%93%D7%95%D7%A9%20%D7%A8%D7%94%D7%99%D7%98%D7%99%D7%9D.">🛋️ חידוש רהיטים[span_7](start_span)[span_7](end_span)</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F.">🧹 ניקיון[span_8](start_span)[span_8](end_span)</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%99%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%A8%D7%99%D7%A1%D7%95%D7%AA%20%D7%95%D7%A7%D7%99%D7%A8%D7%95%D7%AA.">🧱 הריסות[span_9](start_span)[span_9](end_span)</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A9%D7%99%D7%A4%D7%95%D7%A6%D7%99%D7%9D.">📐 שיפוצים[span_10](start_span)[span_10](end_span)</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%92%D7%91%D7%A1.">🪚 עבודות גבס[span_11](start_span)[span_11](end_span)</a>
+        <a class="btn" href="https://wa.me/972559423309?text=שלום%20אני%20מעוניין%20באינסטלציה">🚰 אינסטלציה</a>
+        <a class="btn" href="https://wa.me/972559423309?text=שלום%20אני%20מעוניין%20בצבע">🎨 צבע</a>
+        <a class="btn" href="https://wa.me/972559423309?text=שלום%20אני%20מעוניין%20בחידוש%20רהיטים">🛋️ חידוש רהיטים</a>
+        <a class="btn" href="https://wa.me/972559423309?text=שלום%20אני%20מעוניין%20בניקיון">🧹 ניקיון</a>
+        <a class="btn" href="https://wa.me/972559423309?text=שלום%20אני%20מעוניין%20בהריסות">🧱 הריסות</a>
+        <a class="btn" href="https://wa.me/972559423309?text=שלום%20אני%20מעוניין%20בשיפוצים">📐 שיפוצים</a>
+        <a class="btn" href="https://wa.me/972559423309?text=שלום%20אני%20מעוניין%20בעבודות%20גבס">🪚 עבודות גבס</a>
     </div>
 
-    <h2>🚚 הובלות · Перевозки[span_12](start_span)[span_12](end_span)</h2>
+    <h2>🚚 הובלות</h2>
     <div class="moves-grid">
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%92%D7%93%D7%95%D7%9C%D7%94.">🚛 הובלות גדולות[span_13](start_span)[span_13](end_span)</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%A7%D7%98%D7%95%D7%90.">📦 הובלות קטנות[span_14](start_span)[span_14](end_span)</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%AA%20%D7%A8%D7%94%D7%95%D7%98%20%D7%90%D7%97%D7%93.">🛋️ הובלת רהיט אחד[span_15](start_span)[span_15](end_span)</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%AA%20%D7%9E%D7%A9%D7%A8%D7%93.">🏢 הובלות משרדים[span_16](start_span)[span_16](end_span)</a>
+        <a class="btn" href="https://wa.me/972559423309?text=שלום%20אני%20מעוניין%20בהובלות%20גדולות">🚛 הובלות גדולות</a>
+        <a class="btn" href="https://wa.me/972559423309?text=שלום%20אני%20מעוניין%20בהובלות%20קטנות">📦 הובלות קטנות</a>
+        <a class="btn" href="https://wa.me/972559423309?text=שלום%20אני%20מעוניין%20בהובלת%20רהיט%20אחד">🛋️ הובלת רהיט אחד</a>
+        <a class="btn" href="https://wa.me/972559423309?text=שלום%20אני%20מעוניין%20בהובלות%20משרדים">🏢 הובלות משרדים</a>
     </div>
 
-    <!-- אזור תגובות ודירוגים מסודר -->
+    <!-- אזור תגובות ודירוגים -->
     <div class="reviews-section">
         <h2>⭐ תגובות לקוחות ודירוגים</h2>
         <h3>✍️ השאר תגובה ודרג אותנו:</h3>
@@ -161,7 +161,7 @@
             </div>
 
             <div class="form-group">
-                <label for="reviewCategory">בחר קטגוריית שירות:</label>
+                <label for="reviewCategory">בחר קטגוריה:</label>
                 <select id="reviewCategory" required>
                     <option value="">בחר שירות...</option>
                     <option value="אינסטלציה">אינסטלציה</option>
@@ -204,7 +204,7 @@
             <button type="submit" class="btn" style="background: #28a745; width: 100%; border: none; cursor: pointer; font-size: 16px; padding: 12px;">פרסם תגובה באתר ושלח לוואטסאפ 🚀</button>
         </form>
 
-        <!-- אזור הצגה וסינון תגובות לפי קטגוריות -->
+        <!-- אזור הצגה וסינון תגובות -->
         <div style="margin-top: 35px;">
             <div class="filter-container">
                 <label for="filterCategory" style="display: inline-block; margin-left: 10px; font-weight: bold;">סנן תגובות לפי קטגוריה:</label>
@@ -231,7 +231,7 @@
     </div>
 
     <footer>
-        Matan Richter© M.R הכול לבית[span_17](start_span)[span_17](end_span)
+        Matan Richter© M.R הכול לבית
     </footer>
 </div>
 
@@ -345,5 +345,4 @@
 
 </body>
 </html>
-
 
