@@ -298,3 +298,267 @@
 
 </body>
 </html>
+<!-- אזור התגובות והכוכבים -->
+<section id="reviews-section" class="reviews-container">
+  <h2>⭐ חוות דעת ותגובות לקוחות</h2>
+  
+  <!-- טופס הוספת תגובה -->
+  <form id="review-form" class="review-form">
+    <h3>✍️ השארת חוות דעת</h3>
+    
+    <label for="reviewer-name">שם מלא:</label>
+    <input type="text" id="reviewer-name" required placeholder="הכנס את שמך">
+    
+    <label for="service-category">בחר שירות / קטגוריה:</label>
+    <select id="service-category" required>
+      <option value="" disabled selected>בחר שירות...</option>
+      <option value="אינסטלציה">🚰 אינסטלציה</option>
+      <option value="צבע">🎨 צבע</option>
+      <option value="חידוש רהיטים">🛋️ חידוש רהיטים</option>
+      <option value="ניקיון">🧹 ניקיון</option>
+      <option value="הריסות">🧱 הריסות</option>
+      <option value="שיפוצים">📐 שיפוצים</option>
+      <option value="הובלות">🚚 הובלות</option>
+      <option value="עבודות גבס">🪚 עבודות גבס</option>
+    </select>
+    
+    <label>דירוג (0 עד 5 כוכבים):</label>
+    <div class="star-rating">
+      <span class="star" data-value="1">★</span>
+      <span class="star" data-value="2">★</span>
+      <span class="star" data-value="3">★</span>
+      <span class="star" data-value="4">★</span>
+      <span class="star" data-value="5">★</span>
+    </div>
+    <input type="hidden" id="selected-rating" value="0">
+    <div id="rating-text">דירוג נבחר: 0 מתוך 5 כוכבים</div>
+    
+    <label for="review-comment">תגובה / פירוט:</label>
+    <textarea id="review-comment" rows="4" required placeholder="ספר לנו על חווית השירות..."></textarea>
+    
+    <button type="submit" class="submit-btn">פרסם תגובה ושלח לוואטסאפ 💬</button>
+  </form>
+
+  <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd;">
+
+  <!-- סינון תגובות לפי קטגוריה -->
+  <div class="filter-container">
+    <label for="filter-category"><strong>סינון תגובות לפי קטגוריה:</strong></label>
+    <select id="filter-category" onchange="renderReviews()" style="padding: 5px; margin-right: 10px; border-radius: 4px;">
+      <option value="ALL">כל הקטגוריות</option>
+      <option value="אינסטלציה">🚰 אינסטלציה</option>
+      <option value="צבע">🎨 צבע</option>
+      <option value="חידוש רהיטים">🛋️ חידוש רהיטים</option>
+      <option value="ניקיון">🧹 ניקיון</option>
+      <option value="הריסות">🧱 הריסות</option>
+      <option value="שיפוצים">📐 שיפוצים</option>
+      <option value="הובלות">🚚 הובלות</option>
+      <option value="עבודות גבס">🪚 עבודות גבס</option>
+    </select>
+  </div>
+
+  <!-- רשימת התגובות -->
+  <div id="reviews-list" class="reviews-list"></div>
+</section>
+
+<!-- עיצוב CSS (אפשר להעביר גם לתגיות ה-Style המרכזיות באתר) -->
+<style>
+  .reviews-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    direction: rtl;
+    font-family: sans-serif;
+    text-align: right;
+  }
+  .review-form {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #e5e5e5;
+  }
+  .review-form input, 
+  .review-form select, 
+  .review-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .star-rating {
+    display: flex;
+    gap: 5px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  .star {
+    color: #ccc;
+    transition: color 0.2s;
+  }
+  .star.active {
+    color: #ffc107;
+  }
+  .submit-btn {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .submit-btn:hover {
+    background-color: #20ba5a;
+  }
+  .reviews-list {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .review-card {
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 6px;
+    background: #fff;
+  }
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .badge {
+    background: #e2e8f0;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #333;
+  }
+  .review-stars {
+    color: #ffc107;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  .review-body {
+    margin: 5px 0;
+    color: #333;
+  }
+  .review-date {
+    color: #888;
+    font-size: 11px;
+  }
+</style>
+
+<!-- סקריפט JavaScript לפעילות המערכת -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+  const SUPABASE_KEY = 'YOUR_SUPABASE_ANON_KEY';
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  let currentRating = 0;
+  const stars = document.querySelectorAll('.star');
+  const ratingInput = document.getElementById('selected-rating');
+  const ratingText = document.getElementById('rating-text');
+
+  stars.forEach(star => {
+    star.addEventListener('click', function() {
+      currentRating = parseInt(this.getAttribute('data-value'));
+      ratingInput.value = currentRating;
+      ratingText.innerText = `דירוג נבחר: ${currentRating} מתוך 5 כוכבים`;
+      updateStarUI();
+    });
+  });
+
+  function updateStarUI() {
+    stars.forEach(star => {
+      const val = parseInt(star.getAttribute('data-value'));
+      if (val <= currentRating) {
+        star.classList.add('active');
+      } else {
+        star.classList.remove('active');
+      }
+    });
+  }
+
+  document.getElementById('review-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('reviewer-name').value;
+    const category = document.getElementById('service-category').value;
+    const rating = parseInt(document.getElementById('selected-rating').value);
+    const comment = document.getElementById('review-comment').value;
+
+    const { data, error } = await supabase
+      .from('reviews')
+      .insert([{ name, category, rating, comment, created_at: new Date() }]);
+
+    if (error) {
+      alert('שגיאה בשמירת התגובה. אנא נסה שוב.');
+      console.error(error);
+      return;
+    }
+
+    const whatsappPhone = '972559423309';
+    const starsStr = '⭐'.repeat(rating) || '0 כוכבים';
+    const message = `שלום M.R! התקבלה חוות דעת חדשה באתר:\n\n👤 *שם:* ${name}\n🛠️ *קטגוריה:* ${category}\n⭐ *דירוג:* ${rating}/5 (${starsStr})\n💬 *תגובה:* ${comment}`;
+    
+    const waUrl = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, '_blank');
+
+    document.getElementById('review-form').reset();
+    currentRating = 0;
+    updateStarUI();
+    ratingText.innerText = 'דירוג נבחר: 0 מתוך 5 כוכבים';
+    fetchReviews();
+  });
+
+  let allReviews = [];
+  async function fetchReviews() {
+    const { data, error } = await supabase
+      .from('reviews')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (!error && data) {
+      allReviews = data;
+      renderReviews();
+    }
+  }
+
+  function renderReviews() {
+    const container = document.getElementById('reviews-list');
+    const filter = document.getElementById('filter-category').value;
+    container.innerHTML = '';
+
+    const filtered = filter === 'ALL' 
+      ? allReviews 
+      : allReviews.filter(r => r.category === filter);
+
+    if (filtered.length === 0) {
+      container.innerHTML = '<p style="color: #666; font-size: 14px;">אין עדיין תגובות בקטגוריה זו.</p>';
+      return;
+    }
+
+    filtered.forEach(r => {
+      const item = document.createElement('div');
+      item.className = 'review-card';
+      const starsDisplay = '⭐'.repeat(r.rating) || '0 כוכבים';
+      item.innerHTML = `
+        <div class="review-header">
+          <strong>${r.name}</strong>
+          <span class="badge">${r.category}</span>
+        </div>
+        <div class="review-stars">${starsDisplay} (${r.rating}/5)</div>
+        <p class="review-body">${r.comment}</p>
+        <small class="review-date">${new Date(r.created_at).toLocaleDateString('he-IL')}</small>
+      `;
+      container.appendChild(item);
+    });
+  }
+
+  fetchReviews();
+</script>
