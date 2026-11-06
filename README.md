@@ -69,7 +69,7 @@
             font-size: 14px;
         }
         
-        /* כוכבים פיזיים אמיתיים עם חצאים */
+        /* עיצוב כוכבים פיזיים */
         .stars-container {
             display: flex;
             flex-direction: row-reverse;
@@ -77,19 +77,13 @@
             gap: 5px;
             font-size: 32px;
             cursor: pointer;
-            unicode-bidi: bidi-override;
         }
         .star {
             color: #ddd;
             cursor: pointer;
-            position: relative;
-            display: inline-block;
             transition: color 0.2s;
         }
         .star.active {
-            color: #ffc107;
-        }
-        .star.half {
             color: #ffc107;
         }
 
@@ -139,8 +133,8 @@
     <h2>בחרו שירות · Выберите услугу</h2>
     <div class="services-grid">
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%90%D7%99%D7%A0%D7%A1%D7%98%D7%9C%D7%A6%D7%99%D7%94.">🚰 אינסטלציה</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%A6%D7%91%D7%A2.">🎨 צבע</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F/%D7%AA%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%97%D7%99%D7%93%D7%95%D7%A9%20%D7%A8%D7%94%D7%99%D7%98%D7%99%D7%9D.">🛋️ חידוש רהיטים</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%A6%D7%91%D7%A2.">🎨 צבע</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%97%D7%99%D7%93%D7%95%D7%A9%20%D7%A8%D7%94%D7%99%D7%98%D7%99%D7%9D.">🛋️ חידוש רהיטים</a>
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F.">🧹 ניקיון</a>
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%99%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%A8%D7%99%D7%A1%D7%95%D7%AA%20%D7%95%D7%A7%D7%99%D7%A8%D7%95%D7%AA.">🧱 הריסות</a>
         <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%A9%D7%99%D7%A4%D7%95%D7%A6%D7%99%D7%9D.">📐 שיפוצים</a>
@@ -149,10 +143,10 @@
 
     <h2>🚚 הובלות · Перевозки</h2>
     <div class="moves-grid">
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%92%D7%93%D7%95%D7%9C%D7%94.">🚛 הובלות גדולות</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%A7%D7%98%D7%95%D7%90.">📦 הובלות קטנות</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%AA%20%D7%A8%D7%94%D7%95%D7%98%20%D7%90%D7%97%D7%93.">🛋️ הובלת רהיט אחד</a>
-        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%9D%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%AA%20%D7%9E%D7%A9%D7%A8%D7%93.">🏢 הובלות משרדים</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%92%D7%93%D7%95%D7%9C%D7%94.">🚛 הובלות גדולות</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%9C%D7%94%20%D7%A7%D7%98%D7%95%D7%90.">📦 הובלות קטנות</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%91%D7%AA%20%D7%A8%D7%94%D7%95%D7%98%20%D7%90%D7%97%D7%93.">🛋️ הובלת רהיט אחד</a>
+        <a class="btn" href="https://wa.me/972559423309?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%90%2C%20%D7%91%D7%A9%D7%99%D7%A8%D7%95%D7%AA%3A%20%D7%94%D7%95%D7%AA%20%D7%9E%D7%A9%D7%A8%D7%93.">🏢 הובלות משרדים</a>
     </div>
 
     <!-- אזור תגובות ודירוגים -->
@@ -242,7 +236,6 @@
 </div>
 
 <script>
-    // טעינת תגובות מזיכרון הדפדפן
     let reviews = JSON.parse(localStorage.getItem('mr_reviews')) || [];
 
     const reviewForm = document.getElementById('reviewForm');
@@ -259,7 +252,6 @@
             reviewRatingInput.value = val;
             ratingText.innerHTML = `דירוג נבחר: ${val} מתוך 5 כוכבים`;
 
-            // עדכון צבע הכוכבים פיזית
             stars.forEach(s => {
                 let sVal = parseFloat(s.getAttribute('data-value'));
                 if (sVal <= val) {
@@ -271,10 +263,9 @@
         });
     });
 
-    // הפעלה ראשונית של סימון 5 כוכבים כברירת מחדל
+    // סימון 5 כוכבים כברירת מחדל בהעלאת העמוד
     stars.forEach(s => s.classList.add('active'));
 
-    // המרת מספר כוכבים לתצוגה בכרטיסייה
     function getStarsHTML(rating) {
         let fulls = Math.floor(rating);
         let hasHalf = (rating - fulls) >= 0.5;
@@ -284,7 +275,6 @@
         return `${str} (${rating}/5)`;
     }
 
-    // פונקציה להצגת כל התגובות או לפי סינון
     function renderReviews() {
         reviewsList.innerHTML = '';
         let selectedFilter = filterCategory.value;
@@ -314,7 +304,6 @@
         });
     }
 
-    // שליחת טופס התגובה
     reviewForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -331,11 +320,9 @@
 
         let newReview = { name, category, rating, text, date };
 
-        // הוספה למערך ושמירה מקומית
         reviews.unshift(newReview);
         localStorage.setItem('mr_reviews', JSON.stringify(reviews));
 
-        // איפוס הטופס וחזרה למצב הכללי כדי לראות את התגובה
         reviewForm.reset();
         reviewRatingInput.value = '5';
         ratingText.innerHTML = 'דירוג נבחר: 5 מתוך 5 כוכבים';
@@ -343,7 +330,6 @@
         filterCategory.value = 'all';
         renderReviews();
 
-        // יצירת קישור וואטסאפ ופתיחתו באופן בטוח
         let whatsappMessage = `*💬 תגובה חדשה התקבלה באתר!*%0A%0A` +
                               `👤 *שם:* ${encodeURIComponent(name)}%0A` +
                               `🏷️ *קטגוריה:* ${encodeURIComponent(category)}%0A` +
@@ -354,12 +340,12 @@
         window.open(whatsappUrl, '_blank');
     });
 
-    // טעינת התגובות הראשונית בעליית העמוד
     renderReviews();
 </script>
 
 </body>
 </html>
+
 
 
 
